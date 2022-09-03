@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--html of home page-->
+    <title>Template is Working</title>
+</head>
+<body>
+<h1>Welcome to the Text Aanlyzer</h1>
+<form action="/analyze" method="get">
+    <textarea name="text" placeholder="Paste your Text" style='width: 645px;height: 128px;'></textarea>
+    <br>
+
+    <!-- creates  Checkboxes-->
+    <input type="checkbox" name="uppercase">Uppercase<br>
+    <input type="checkbox" name="charcount">Count Characters<br>
+    <input type="checkbox" name="rmpunc">Remove punctuations<br>
+    <input type="checkbox" name="rmnewline">Remove NewLines<br>
+    <input type="checkbox" name="rmspace">Remove Extra Space
+
+
+    <br>
+    <button type="submit">Analyze</button>
+
+</form>
+</body>
+</html>
