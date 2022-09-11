@@ -11,14 +11,14 @@ def home(request):
 def analyzer(request):
 
     # get text from text area (index.html)
-    text = request.GET.get('text', "default")
+    text = request.POST.get('text', "default")
 
 # check boxes(on / off)
-    rm_punc = request.GET.get('rmpunc', 'off')  # remove punctuation
-    upper = request.GET.get('uppercase', 'off')  # uppercase checkbox
-    char_count = request.GET.get('charcount', 'off')  # character count checkbox
-    rm_newline = request.GET.get('rmnewline', 'off')  # newline remove
-    rm_space = request.GET.get('rmspace', 'off')  # remove extra spaces
+    rm_punc = request.POST.get('rmpunc', 'off')  # remove punctuation
+    upper = request.POST.get('uppercase', 'off')  # uppercase checkbox
+    char_count = request.POST.get('charcount', 'off')  # character count checkbox
+    rm_newline = request.POST.get('rmnewline', 'off')  # newline remove
+    rm_space = request.POST.get('rmspace', 'off')  # remove extra spaces
 
 # working of checkbox
     if rm_punc == 'on':
