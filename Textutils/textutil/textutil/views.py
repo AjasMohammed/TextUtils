@@ -83,3 +83,6 @@ def rm_space(request):
 def char_count(request):
     return HttpResponse("Character Count")
 
+def results(request):
+    word  = request.GET.get('word', 'default')
+    return render(request, 'results.html', {'word': word})
