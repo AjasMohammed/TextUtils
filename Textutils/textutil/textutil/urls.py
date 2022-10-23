@@ -25,5 +25,6 @@ urlpatterns = [
     path('newlineremove/', views.rm_newline, name='rmNewline'),
     path('spaceremove/', views.rm_space, name='rmSpace'),
     path('charcount/', views.char_count, name='Character Count'),
+    path('results/', views.results, name='results')
 
 ]

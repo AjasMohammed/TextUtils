@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" style="scroll-behavior:smooth">
+<head>
+    <meta charset="UTF-8">
+    <title>Analyzer</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <style>
+        #res{
+            font-weight: 700;
+            margin-bottom:2rem;
+        }
+        #text{
+            font-size: large;
+        }
+        h5{
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body class="container-fluid" style="font-family:courier;">
+    <header>
+        <div class="row">
+            <div class="col-12 p-0">
+                  <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <a class="navbar-brand" href="#" style="font-family:courier;font-weight:bold;color:white;font-size:2em;">TextUtils</a>
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link" href="\" style="color:white;font-size: 130%;margin-left: 5%;">
+                Home<span class="sr-only">(current)</span></a>
+          </li>
+    
+        </ul>
+        <form class="form-inline my-2 my-lg-0" action="/results" method="get">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" name="word"
+          autocomplete="off" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="search">Search</button>
+        </form>
+      </div>
+    </nav>
+    
+            </div>
+        </div>
+    
+    </header>
+
+    <div style="margin-top:2rem;">
+    <pre><p id="text"></p></pre>
+</div>
+<hr>
+<div>
+    <h4 id="res">Results for : <span id="word">{{word}}</span></h4>
+
+    <div id="results"></div>
+</div>
+
+    <script>
+        var text = sessionStorage.getItem('text'); // text variable assigned to value in session storage
+        var word = document.getElementById('word').innerHTML.toLowerCase();
+
+        document.getElementById('text').innerHTML = text; // shows text in web page
+
+        var filtered_text = text.split('\n').filter(function(value, index, item){ //splits the text and removes ''
+            return value != '';
+        })
+        // console.log(filtered_text);
+        // console.log(word);
+
+        ind = 0
+        for(var i = 0; i < filtered_text.length; i++){
+            // console.log(filtered_text[i].includes(word));
+            
+            if(filtered_text[i].toLowerCase().includes(word)){
+
+                ind++
+                document.getElementById('results').innerHTML += `<h5>${ind} ${filtered_text[i]}</h5`; // Adds results in web page
+                // console.log(filtered_text[i]);
+                // ind += 1
+            }
+        }
+        if(ind == 0){
+            document.getElementById('results').innerHTML += `<h5>None</h5`;
+        }
+
+
+    </script>
+    </body>
+    </html>
+    

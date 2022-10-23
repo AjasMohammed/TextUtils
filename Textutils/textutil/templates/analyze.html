@@ -23,9 +23,9 @@
           </li>
     
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <form class="form-inline my-2 my-lg-0" action="/results" method="get">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" name="word" aria-label="Search" autocomplete="off">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="search">Search</button>
         </form>
       </div>
     </nav>
@@ -38,12 +38,17 @@
 
 
 <p>
-    <pre style="font-family:courier; font-size:130%; margin-left: 30px;margin-top: 30px;">{{text}}</pre>
+    <pre style="font-family:courier; font-size:130%; font-weight: 700; margin-left: 30px;margin-top: 30px;" 
+    id="text">{{text}}</pre>
 </p>
 <br>
 
 <p><h4 style="font-weight: 600;">{{statement}} {{ans}}</h4></p>
 
-
+<script>
+  text = document.getElementById('text').innerHTML; 
+  // console.log(text);
+  sessionStorage.setItem('text', text); // stores the value to session storage
+</script>
 </body>
 </html>
