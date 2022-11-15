@@ -67,19 +67,13 @@
         var filtered_text = text.split('\n').filter(function(value, index, item){ //splits the text and removes ''
             return value != '';
         })
-        // console.log(filtered_text);
-        // console.log(word);
 
         ind = 0
-        for(var i = 0; i < filtered_text.length; i++){
-            // console.log(filtered_text[i].includes(word));
-            
+        for(var i = 0; i < filtered_text.length; i++){            
             if(filtered_text[i].toLowerCase().includes(word)){
 
                 ind++
                 document.getElementById('results').innerHTML += `<h5>${ind} ${filtered_text[i]}</h5`; // Adds results in web page
-                // console.log(filtered_text[i]);
-                // ind += 1
             }
         }
         if(ind == 0){

@@ -23,10 +23,7 @@
           </li>
     
         </ul>
-        <form class="form-inline my-2 my-lg-0" action="/results" method="get">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" name="word" aria-label="Search" autocomplete="off">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="search">Search</button>
-        </form>
+
       </div>
     </nav>
     
@@ -44,6 +41,13 @@
 <br>
 
 <p><h4 style="font-weight: 600;">{{statement}} {{ans}}</h4></p>
+
+<hr>
+<h4>Search Words</h4>
+<form class="form-inline my-2 my-lg-0" action="/results" method="get">
+  <input class="form-control mr-sm-2" type="search" placeholder="Search" name="word" aria-label="Search" autocomplete="off">
+  <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="search">Search</button>
+</form>
 
 <script>
   text = document.getElementById('text').innerHTML; 
